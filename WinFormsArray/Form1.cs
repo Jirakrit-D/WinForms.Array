@@ -55,15 +55,41 @@ namespace WinFormsArray
         {
             string[] data = textBox1.Lines;
             string result = "";
+            int sum = 0;
             foreach (var str in data)
             {
                 int x = 0;
-                if (int.TryParse(str,out x))
+                if (int.TryParse(str, out x))
                 {
+                    sum += x;
                     result += x.ToString() + Environment.NewLine;
                 }
             }
             label1.Text = result;
+            MessageBox.Show(sum.ToString(), "ผลรวมของตัวเลข");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string[,] student = new string[3,2];
+            student[0, 0] = "โอปอ";
+            student[0, 1] = "บึงกาฬ";
+            student[1, 0] = "ต้า";
+            student[1, 1] = "อุดรธานี";
+            student[2, 0] = "เอ็ม";
+            student[2, 1] = "หนองบัวลำภู";
+            string ResultData = "";
+            int m = student.GetLength(0);
+            int n = student.GetLength(1);
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    ResultData += student[i, j] + "-";
+                }
+                ResultData += Environment.NewLine;
+            }
+            MessageBox.Show(ResultData,"แสดงข้อมูลใน Array 2 มิติ");
         }
     }
 }

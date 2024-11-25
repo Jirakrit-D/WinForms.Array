@@ -36,6 +36,7 @@
             label2 = new Label();
             label3 = new Label();
             button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -115,11 +116,22 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.Location = new Point(47, 243);
+            button5.Name = "button5";
+            button5.Size = new Size(157, 94);
+            button5.TabIndex = 7;
+            button5.Text = "Array 2 มิติ";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(916, 450);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -146,5 +158,6 @@
         private Label label2;
         private Label label3;
         private Button button4;
+        private Button button5;
     }
 }
