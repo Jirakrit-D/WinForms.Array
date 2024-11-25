@@ -71,7 +71,7 @@ namespace WinFormsArray
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string[,] student = new string[3,2];
+            string[,] student = new string[3, 2];
             student[0, 0] = "โอปอ";
             student[0, 1] = "บึงกาฬ";
             student[1, 0] = "ต้า";
@@ -89,7 +89,29 @@ namespace WinFormsArray
                 }
                 ResultData += Environment.NewLine;
             }
-            MessageBox.Show(ResultData,"แสดงข้อมูลใน Array 2 มิติ");
+            MessageBox.Show(ResultData, "แสดงข้อมูลใน Array 2 มิติ");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string[] Fruits = { "ส้ม", "ทุเรียน", "มะกอก", "บักแงว", "หมากเม่า", "บักหุ่ง", "บักเล็บแมว" };
+            comboBox1.Items.AddRange(Fruits);
+            listBox1.Items.AddRange(Fruits);
+            checkedListBox1.Items.AddRange(Fruits);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = comboBox1.SelectedIndex.ToString() + "-";
+            str += comboBox1.SelectedItem;
+            MessageBox.Show(str);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = listBox1.SelectedIndex.ToString() + "-";
+            str += listBox1.SelectedItem;
+            MessageBox.Show(str);
         }
     }
 }
