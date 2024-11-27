@@ -1,4 +1,4 @@
-namespace WinFormsArray
+Ôªønamespace WinFormsArray
 {
     public partial class Form1 : Form
     {
@@ -10,74 +10,76 @@ namespace WinFormsArray
         private void button1_Click(object sender, EventArgs e)
         {
             string[] student = new string[5];
-            student[0] = "§‘¡";
-            student[1] = "‰Õ§‘«";
-            student[2] = "‡¢µµÏ";
-            student[3] = "‚™°ÿπ";
-            student[4] = "µÈπ°≈È“";
+            student[0] = "test1";
+            student[1] = "test2";
+            student[2] = "test3";
+            student[3] = "test4";
+            student[4] = "test5";
             string test = "";
-            int n = student.Length;   //À“¢π“¥¢Õß Array
-            for (int i = 0; i < n; i++)
+
+            for (int i = 0; i < student.Length; i++) // student.Lenght ‡∏´‡∏≤‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏£‡∏≠‡∏ö
             {
                 test += student[i] + Environment.NewLine;
             }
             MessageBox.Show(test);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string[] Fruits = { " È¡", "∑ÿ‡√’¬π", "¡–°Õ°", "∫—°·ß«", "À¡“°‡¡Ë“", "∫—°ÀÿËß", "∫—°‡≈Á∫·¡«" };
-            string myFruit = "";
-            foreach (string str in Fruits)
+            string[] Fruits = { "test1", "test2", "test3", "test4", "test5" };
+            string myFruits = "";
+            foreach (string f in Fruits) //Array ‡πÅ‡∏ö‡∏ö‡πÑ‡∏°‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏£‡∏π‡πâ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏£‡∏≠‡∏ö
             {
-                myFruit += str + ", ";
+                myFruits += f + ", " + Environment.NewLine;
             }
-            MessageBox.Show(myFruit, "º≈‰¡È¢Õß©—π");
+            MessageBox.Show(myFruits, "Mytest");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string[] data = textBox1.Lines;   //¢ÈÕ¡Ÿ≈·µË≈–∫√√∑—¥‰ª„ Ë„π Array
+            string[] data = textBox1.Lines; //‡∏ô‡∏≥‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÅ‡∏ï‡πà‡∏•‡∏∞‡∏ö‡∏£‡∏£‡∏ó‡∏±‡∏•‡πÑ‡∏õ‡πÉ‡∏™‡πà‡πÉ‡∏ôArray
             string result = "";
-            foreach (string str in data)
+            foreach (string s in data)
             {
-                if (str != "")
+                if (s != "")
                 {
-                    result += str + Environment.NewLine;
+                    result += s + Environment.NewLine;
                 }
 
             }
             label1.Text = result;
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string[] data = textBox1.Lines;
             string result = "";
-            int sum = 0;
+            int x = 0;
+            int Sum = 0;
             foreach (var str in data)
             {
-                int x = 0;
+
                 if (int.TryParse(str, out x))
                 {
-                    sum += x;
                     result += x.ToString() + Environment.NewLine;
+                    Sum += x;
                 }
+
             }
+            MessageBox.Show(Sum.ToString(), "‡∏ú‡∏•‡∏£‡∏≤‡∏°");
             label1.Text = result;
-            MessageBox.Show(sum.ToString(), "º≈√«¡¢Õßµ—«‡≈¢");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             string[,] student = new string[3, 2];
-            student[0, 0] = "‚ÕªÕ";
-            student[0, 1] = "∫÷ß°“Ã";
-            student[1, 0] = "µÈ“";
-            student[1, 1] = "Õÿ¥√∏“π’";
-            student[2, 0] = "‡ÕÁ¡";
-            student[2, 1] = "ÀπÕß∫—«≈”¿Ÿ";
+            student[0, 0] = "test1";
+            student[0, 1] = "test2";
+            student[1, 0] = "test3";
+            student[1, 1] = "test4";
+            student[2, 0] = "test5";
+            student[2, 1] = "test6";
             string ResultData = "";
             int m = student.GetLength(0);
             int n = student.GetLength(1);
@@ -85,16 +87,25 @@ namespace WinFormsArray
             {
                 for (int j = 0; j < n; j++)
                 {
-                    ResultData += student[i, j] + "-";
+
+                    if (j == 0)
+                    {
+                        ResultData += student[i, j] + "-";
+                    }
+                    if (j != 0)
+                    {
+                        ResultData += student[i, j];
+                    }
+
                 }
                 ResultData += Environment.NewLine;
             }
-            MessageBox.Show(ResultData, "· ¥ß¢ÈÕ¡Ÿ≈„π Array 2 ¡‘µ‘");
+            MessageBox.Show(ResultData, "‡πÅ‡∏™‡∏î‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÉ‡∏ô Array 2 ‡∏°‡∏¥‡∏ï‡∏¥");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string[] Fruits = { " È¡", "∑ÿ‡√’¬π", "¡–°Õ°", "∫—°·ß«", "À¡“°‡¡Ë“", "∫—°ÀÿËß", "∫—°‡≈Á∫·¡«" };
+            string[] Fruits = { "‡∏™‡πâ‡∏°", "‡∏ó‡∏∏‡πÄ‡∏£‡∏µ‡∏¢‡∏ô", "‡∏°‡∏∞‡∏Å‡∏≠‡∏Å", "‡∏ö‡∏±‡∏Å‡πÅ‡∏á‡πâ‡∏ß", "‡∏´‡∏°‡∏≤‡∏Å‡πÄ‡∏°‡πà‡∏≤" };
             comboBox1.Items.AddRange(Fruits);
             listBox1.Items.AddRange(Fruits);
             checkedListBox1.Items.AddRange(Fruits);
@@ -102,16 +113,18 @@ namespace WinFormsArray
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string str = comboBox1.SelectedIndex.ToString() + "-";
-            str += comboBox1.SelectedItem;
-            MessageBox.Show(str);
+            string[] Fruits = { "‡∏™‡πâ‡∏°", "‡∏ó‡∏∏‡πÄ‡∏£‡∏µ‡∏¢‡∏ô", "‡∏°‡∏∞‡∏Å‡∏≠‡∏Å", "‡∏ö‡∏±‡∏Å‡πÅ‡∏á‡πâ‡∏ß", "‡∏´‡∏°‡∏≤‡∏Å‡πÄ‡∏°‡πà‡∏≤" };
+            comboBox1.Items.AddRange(Fruits);
+            listBox1.Items.AddRange(Fruits);
+            checkedListBox1.Items.AddRange(Fruits);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string str = listBox1.SelectedIndex.ToString() + "-";
-            str += listBox1.SelectedItem;
+            string str = listBox1.SelectedIndex.ToString();
+            str += comboBox1.SelectedItem;
             MessageBox.Show(str);
         }
+
     }
 }
